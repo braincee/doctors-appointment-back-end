@@ -1,4 +1,3 @@
 class User < ApplicationRecord
-    validates :username, precence:true, length {minimum: 3, maximum: 15  }
-
+  validates :username, precence: true
 end
