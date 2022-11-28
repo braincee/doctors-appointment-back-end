@@ -29,7 +29,7 @@ class Api::V1::UsersController < ApplicationController
   def destroy
     @user = User.find_by_id(params[:id])
     if @user.destroy
-      render json: 'user Successfully deleted', status: 200
+      render json: 'User Successfully deleted', status: 200
     else
       render json: 'unable to delete the user!', status: unprocessable_entity
     end
