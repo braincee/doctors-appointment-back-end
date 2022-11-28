@@ -1,5 +1,5 @@
 class User < ApplicationRecord
   has_many :appointments, dependent: :destroy
-  validates :username, precence: true, length: { minimum: 3, maximum: 50 }
-  validates :email, uniqueness: true
+  validates :username, presence: true, length: { minimum: 3, maximum: 50 }
+  validates :email, uniqueness: true, presence: true
 end
