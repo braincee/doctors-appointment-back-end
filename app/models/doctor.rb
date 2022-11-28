@@ -1,3 +1,6 @@
 class Doctor < ApplicationRecord
-
+    validates :name, presence: true, length: { minimum: 3, maximum: 15 }
+    validates :image, presence: true
+    validates :specialization, presence: true, length: { minimum: 3, maximum: 300 }
+    validates :fee, presence: true, numericality: { greater_than: 10, less_than: 100_000 }
 end
