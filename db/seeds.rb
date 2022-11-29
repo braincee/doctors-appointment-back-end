@@ -15,35 +15,41 @@ User.create!(username:'stacy', email:'stacy@gmail.com', password:'stacy123')
 
 puts 'User seeds done  ..'
 puts 'Doctors seeding .....'
+
 Doctor.create!([                                     
     {
-      name: "Dr Owen",                                                
-    details: "Internal Medecine",                                   
-    image:"https://cdn.pixabay.com/photo/2017/05/23/17/12/doctor-2337835_960_720.jpg",
+      user_id: 1,
+      name: "Dr Philip",                                                
+    speciality: "Gynaecolgy",                                   
+    image:"https://burst.shopify.com/",
     fee: 100
     },
     {
-    name: "Dr Chang",                                               
-    details: "Dermatologist",                                       
-    image:"https://cdn.pixabay.com/photo/2020/03/14/17/05/virus-4931227__340.jpg",
+     user_id: 2,
+    name: "Dr Stephen",                                               
+    speciality: "Surgeon",                                       
+    image:"https://burst.shopify.com/",
     fee: 50
     },
     {
-      name: "Dr Levy",
-      details: "Psychologist",
-      image:"https://avatars.githubusercontent.com/u/87197412?s=400&u=08134e683e4128eba4edf0cba460849eccbb6eba&v=4",
+      user_id: 3,
+      name: "Dr Brian",
+      speciality: "Psychologist",
+      image:"https://burst.shopify.com/",
       fee: 50
     },
     {
-      name: "Dr Rida",
-      details: "Dentist",
-      image: "https://avatars.githubusercontent.com/u/72971752?v=4",
+      user_id: 4,
+      name: "Dr Yoofi",
+      speciality: "Dentist",
+      image: "https://burst.shopify.com/",
       fee: 200
     },
     {
-      name: "Dr Akanbi",
-    details: "Surgeon",
-    image: "https://avatars.githubusercontent.com/u/83509786?v=4",
+      user_id: 5,
+      name: "Dr Edmund",
+    speciality: "Optometrist",
+    image: "https://burst.shopify.com/",
     fee: 300
     }
     ]);
