@@ -4,17 +4,17 @@ Rails.application.routes.draw do
    namespace :v1 do
      get '/users', to: 'users#index'
      get '/users/:id', to: 'users#show'
-     post '/adduser', to: 'users#create'
-     delete '/deleteuser/:id', to: 'users#destroy'
-     patch '/updateuser/:id', to: 'users#update'
+     post '/user/add', to: 'users#create'
+     delete '/user/delete/:id', to: 'users#destroy'
+     patch '/user/update/:id', to: 'users#update'
 
      # Doctor Routes 
 
      get '/doctors', to: 'doctors#index'
      get '/doctors/:id', to: 'doctors#show'
-     get '/doctors/add-doctor', to: 'doctors#create'
-     get '/doctors/deletedoctor/:id', to: 'doctors#destory'
-     get '/doctors/updatedoctor/:id', to: 'doctors#update'
+     post '/doctor/add', to: 'doctors#create'
+     delete '/doctor/delete/:id', to: 'doctors#destroy'
+     patch '/doctor/update/:id', to: 'doctors#update'
     end
  end
 
