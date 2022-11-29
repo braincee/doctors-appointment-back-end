@@ -10,7 +10,7 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def show
-    @doctor = Doctor.finc(params[:id])
+    @doctor = Doctor.where(id: params[:id]).includes(:appointments)
     if @doctor
       render json: { status: 'Success', data: @doctors, message: 'Doctor successfully shown'}, status: :ok
     else 
@@ -26,7 +26,11 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def destroy
-    
+    @doctor = Doctor.where(id: params[:id]).includes(:appointments)
+    if @doctor.destroy!
+      render json: { message: 'Doctor deleted successfully', data: @doctor.id }, status: :ok
+    else
+      render json: @doctor.errors, status: :bad_request
   end
 
   def update
