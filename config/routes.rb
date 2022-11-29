@@ -10,8 +10,12 @@ Rails.application.routes.draw do
 
      # Doctor Routes 
 
-     get '/doctors', to: 'doctors#index'
-     get '/doctors/:id', to: 'doctors#show'
+     get '/doctors', to: 'doctors#index' do
+      get :image, on::member
+     end 
+     get '/doctors/:id', to: 'doctors#show' do
+       get :image, on::member
+     end
      post '/doctor/add', to: 'doctors#create'
      delete '/doctor/delete/:id', to: 'doctors#destroy'
      patch '/doctor/update/:id', to: 'doctors#update'

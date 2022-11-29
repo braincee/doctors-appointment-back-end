@@ -15,11 +15,11 @@ fifth_user = User.create!(username:'antoney', email:'antoney@gmail.com', passwor
 puts 'User seeds done  ..'
 puts 'Doctors seeding .....'
 
-first_doctor = Doctor.create!(user_id: first_user.id, name: 'Dr Philip', speciality: 'Gynaecology', image: 'https://burst.shopify.com/', fee: 200)
-second_doctor = Doctor.create!(user_id: second_user.id, name: 'Dr Brian', speciality: 'Surgeon', image: 'https://burst.shopify.com/', fee: 150)
-third_doctor = Doctor.create!(user_id: second_user.id, name: 'Dr Stephen', speciality: 'Psychologist', image: 'https://burst.shopify.com/', fee: 300)
-fourth_doctor = Doctor.create!(user_id: third_user.id, name: 'Dr Louisa', speciality: 'Dentist', image: 'https://burst.shopify.com/', fee: 220)
-fifth_doctor = Doctor.create!(user_id: fourth_user.id, name: 'Dr Edmund', speciality: 'Optometrist', image: 'https://burst.shopify.com/', fee: 130)
+first_doctor = Doctor.create!(user_id: first_user.id, name: 'Dr Philip', speciality: 'Gynaecology', fee: 200)
+second_doctor = Doctor.create!(user_id: second_user.id, name: 'Dr Brian', speciality: 'Surgeon', fee: 150)
+third_doctor = Doctor.create!(user_id: second_user.id, name: 'Dr Stephen', speciality: 'Psychologist', fee: 300)
+fourth_doctor = Doctor.create!(user_id: third_user.id, name: 'Dr Louisa', speciality: 'Dentist', fee: 220)
+fifth_doctor = Doctor.create!(user_id: fourth_user.id, name: 'Dr Edmund', speciality: 'Optometrist', fee: 130)
 
 
 puts 'Doctors seed successful ...'

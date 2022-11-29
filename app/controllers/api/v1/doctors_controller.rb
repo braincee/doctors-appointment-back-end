@@ -1,19 +1,19 @@
 class Api::V1::DoctorsController < ApplicationController
   def index
-    @doctors = Doctor.includes(:appointments).order('created_at desc')
+    @doctors = Doctor.includes(:appointments, :image_attachment).order('created_at desc')
     if @doctors
-      render json: { status: 'SUCCESS', data: @doctors, message: 'All doctors loaded succesfully' }, status: :ok
+      render json: @doctors, status: :ok
     else
-      render json: @doctors.errors, status: :bad_request
+      render json: @doctors.errors.full_messages, status: :bad_request
     end
   end
 
   def show
-    @doctor = Doctor.where(id: params[:id]).includes(:appointments)
+    @doctor = Doctor.where(id: params[:id]).includes(:appointments, :image_attachment)
     if @doctor
-      render json: { status: 'SUCCESS', data: @doctor, message: 'Doctor successfully shown' }, status: :ok
+      render json: @doctor, status: :ok
     else
-      render json: @doctor.errors, status: :bad_request
+      render json: @doctor.errors.full_messages, status: :bad_request
     end
   end
 
@@ -22,16 +22,16 @@ class Api::V1::DoctorsController < ApplicationController
     if @doctor.save
       render json: { status: 'SUCCESS', data: @doctor, message: 'Doctor successfully created' }, status: :created
     else
-      render json: @doctor.errors, status: :unprocessable_entity
+      render json: @doctor.errors.full_messages, status: :unprocessable_entity
     end
   end
 
   def destroy
     @doctor = Doctor.find(params[:id])
-    if @doctor.destroy!
+    if @doctor.destroy
       render json: { status: 'DELETED', message: 'Doctor deleted successfully', data: @doctor }, status: :ok
     else
-      render json: @doctor.errors, status: :bad_request
+      render json: @doctor.errors.full_messages, status: :bad_request
     end
   end
 
