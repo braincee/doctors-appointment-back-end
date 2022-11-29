@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'doctors/index'
+  get 'doctors/show'
+  get 'doctors/create'
+  get 'doctors/destroy'
+  get 'doctors/update'
  namespace :api do 
    namespace :v1 do
      get '/users', to: 'users#index'
