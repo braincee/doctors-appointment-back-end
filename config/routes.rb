@@ -7,6 +7,14 @@ Rails.application.routes.draw do
      post '/adduser', to: 'users#create'
      delete '/deleteuser/:id', to: 'users#destroy'
      patch '/updateuser/:id', to: 'users#update'
+
+     # Doctor Routes 
+
+     get '/doctors', to: 'doctors#index'
+     get '/doctors/:id', to: 'doctors#show'
+     get '/doctors/add-doctor', to: 'doctors#create'
+     get '/doctors/deletedoctor/:id', to: 'doctors#destory'
+     get '/doctors/updatedoctor/:id', to: 'doctors#update'
     end
  end
 
