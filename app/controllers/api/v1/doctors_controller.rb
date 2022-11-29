@@ -34,6 +34,11 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def update
+    @doctor = Doctor.where(id: params[:id]).includes(:appointments)
+    if @doctor.update(user_params)
+      render json: { message: 'Doctor Update successful', data: @doctor(user_params) }, status: :ok
+    else
+      render json: { message: 'unable to update user'}, status: :unprocessable_entity
   end
 
   def doctor_params
