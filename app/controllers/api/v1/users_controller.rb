@@ -4,7 +4,7 @@ class Api::V1::UsersController < ApplicationController
     if @users
       render json: @users, status: 200
     else
-      render json: 'NO users found', status: 404
+      render json: 'No users found', status: 404
     end
   end
 
@@ -13,7 +13,7 @@ class Api::V1::UsersController < ApplicationController
     if @user
       render json: @user, status: 200
     else
-      render json: 'No user found!', status: 404
+      render json: 'No users found!', status: 404
     end
   end
 
