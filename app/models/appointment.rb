@@ -1,6 +1,5 @@
 class Appointment < ApplicationRecord
   belongs_to :user
   belongs_to :doctor
-  validates :city, presence: true
-  validates :appointment_time, presence: true
+  validates :city, :start_date, :end_date, :user_id, :doctor_id, presence: true
 end
