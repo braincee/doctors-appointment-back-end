@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+### testing
+
+`rspec ./spec/models/doctor_spec.rb`
+`rspec ./spec/models/user_spec.rb`
