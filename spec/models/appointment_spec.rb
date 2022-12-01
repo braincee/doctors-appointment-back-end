@@ -13,6 +13,11 @@ RSpec.describe Appointment, type: :model do
         expect(subject).to_not be_valid
       end
   
+      it 'check the end_date is not blank' do
+        subject.end_date = nil
+        expect(subject).to_not be_valid
+      end
+  
     describe 'Associations' do
       it 'has many users' do
         assc = described_class.reflect_on_association(:user)
