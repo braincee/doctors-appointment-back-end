@@ -44,8 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_092745) do
 
   create_table "appointments", force: :cascade do |t|
     t.string "city"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.datetime "appointment_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "doctor_id", null: false

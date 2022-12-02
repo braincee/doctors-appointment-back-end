@@ -2,8 +2,7 @@ class CreateAppointments < ActiveRecord::Migration[7.0]
   def change
     create_table :appointments do |t|
       t.string :city
-      t.datetime :start_date
-      t.datetime :end_date
+      t.datetime :appointment_time
 
       t.timestamps
     end
