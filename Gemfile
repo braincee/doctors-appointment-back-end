@@ -5,8 +5,6 @@ ruby '3.1.2'
 
 gem 'pg'
 
-gem 'rspec-rails'
-
 gem 'ffi'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

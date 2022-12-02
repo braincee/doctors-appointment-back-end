@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Doctor, type: :model do
   before :each do
     @user = User.create(username: 'steve', email: 'steve@gmail.com')
-    @doctor = Doctor.create(user_id: @user.id, name: 'Dr Steve', speciality: 'Dentist', fee: 200, image: Rack::Test::UploadedFile.new('spec/models/test.png', 'image/png'))
+    @doctor = Doctor.create(user_id: @user.id, name: 'Dr Steve', speciality: 'Dentist', fee: 200,
+                            image: Rack::Test::UploadedFile.new('spec/models/test.png', 'image/png'))
   end
 
   context 'model validations' do
