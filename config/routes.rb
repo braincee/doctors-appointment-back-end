@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-   namespace :api do 
+ namespace :api do 
    namespace :v1 do
      get '/users', to: 'users#index'
-     get '/users/:id', to: 'users#show'
+     post '/user/id', to: 'users#show'
      post '/user/add', to: 'users#create'
      delete '/user/delete/:id', to: 'users#destroy'
      patch '/user/update/:id', to: 'users#update'
@@ -24,11 +24,5 @@ Rails.application.routes.draw do
      patch '/appointment/update/:id', to: 'appointments#update'
      delete  '/appointment/delete/:id', to: 'appointments#destroy'
     end
-end
-
-
-
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  # Defines the root path route ("/")
-  # root "articles#index"
-end
+  end
+end 
