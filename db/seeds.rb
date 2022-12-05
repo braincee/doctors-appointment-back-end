@@ -21,6 +21,8 @@ third_doctor = Doctor.create!(user_id: second_user.id, name: 'Dr Stephen', speci
 fourth_doctor = Doctor.create!(user_id: third_user.id, name: 'Dr Louisa', speciality: 'Dentist', fee: 220)
 fifth_doctor = Doctor.create!(user_id: fourth_user.id, name: 'Dr Edmund', speciality: 'Optometrist', fee: 130)
 
+first_appointment = Appointment.create!(user_id: first_user.id, doctor_id: first_doctor.id, city: "Accra", appointment_time: "2022-12-12")
+
 
 puts 'Doctors seed successful ...'
 

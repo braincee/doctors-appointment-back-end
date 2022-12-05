@@ -2,7 +2,7 @@ class Api::V1::UsersController < ApplicationController
   def index
     @users = User.includes(:appointments).order('created_at desc')
     if @users
-      render json: @users, status: 200
+      render json: @users, status: :ok
     else
       render json: 'No users found', status: 404
     end
@@ -11,7 +11,7 @@ class Api::V1::UsersController < ApplicationController
   def show
     @user = User.where(id: params[:id]).includes(:appointments)
     if @user
-      render json: @user, status: 200
+      render json: @user, status: :ok
     else
       render json: 'No users found!', status: 404
     end
@@ -20,7 +20,7 @@ class Api::V1::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      render json: { status: 'SUCCESS', data: @user, message: 'Doctor successfully created' }, status: :created
+      render json: { status: 'SUCCESS', data: @user, message: 'Doctor successfully created' }, status: :ok
     else
       render json: @user.errors.full_messages, status: 500
     end
@@ -29,7 +29,7 @@ class Api::V1::UsersController < ApplicationController
   def destroy
     @user = User.find_by_id(params[:id])
     if @user.destroy
-      render json: 'User Successfully deleted', status: 200
+      render json: 'User Successfully deleted', status: :ok
     else
       render json: 'unable to delete the user!', status: unprocessable_entity
     end
@@ -38,7 +38,7 @@ class Api::V1::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      render json: 'User profile updated successfully', status: :created
+      render json: 'User profile updated successfully', status: :ok
     else
       render json: 'unable to update user', status: unprocessable_entity
     end
