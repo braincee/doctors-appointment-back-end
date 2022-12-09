@@ -18,7 +18,7 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def create
-    @doctor = Doctor.new(doctor_params)
+     @doctor = Doctor.new(doctor_params.merge(user_id: params[:user_id]))
     if @doctor.save
       render json: { status: 'SUCCESS', data: @doctor, message: 'Doctor successfully created' }, status: :created
     else

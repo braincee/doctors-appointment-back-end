@@ -18,7 +18,7 @@ class Api::V1::AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = Appointment.new(appointment_params)
+    @appointment = Appointment.new(appointment_params.merge(user_id: params[:user_id], doctor_id: params[:doctor_id]))
     if @appointment.save
       render json: @appointment, status: :created
     else

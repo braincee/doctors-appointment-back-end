@@ -9,7 +9,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    @user = User.where(id: params[:id]).includes(:appointments)
+    @user = User.find_by(name: params[:name])
     if @user
       render json: @user, status: :ok
     else
