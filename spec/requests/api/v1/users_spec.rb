@@ -3,13 +3,13 @@ require 'swagger_helper'
 RSpec.describe 'users', type: :request do
   path '/api/login' do
     post('login user') do
-        tags 'User Login'
+      tags 'User Login'
       response(200, 'Logged in successfully!!') do
         consumes 'application/json'
         parameter name: :user, in: :body, schema: {
           type: :object,
           properties: {
-            name: { type: :string },
+            name: { type: :string }
 
           },
           required: %w[name]
@@ -29,14 +29,14 @@ RSpec.describe 'users', type: :request do
 
   path '/api/register' do
     post('signup user') do
-        tags 'User SignUp'
+      tags 'User SignUp'
       response(201, 'Successfully signed up!!') do
         consumes 'application/json'
         parameter name: :user, in: :body, schema: {
           type: :object,
           properties: {
             name: { type: :string },
-            email: { type: :string },
+            email: { type: :string }
           },
           required: %w[name email]
         }

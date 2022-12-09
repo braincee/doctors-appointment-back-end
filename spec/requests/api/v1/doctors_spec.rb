@@ -3,7 +3,7 @@ require 'swagger_helper'
 RSpec.describe 'api/v1/doctors', type: :request do
   path '/api/v1/doctors' do
     get('list doctors') do
-        tags 'All Doctors'
+      tags 'All Doctors'
       response(200, 'All doctors loaded successfully!') do
         after do |example|
           example.metadata[:response][:content] = {
@@ -17,7 +17,7 @@ RSpec.describe 'api/v1/doctors', type: :request do
     end
 
     post('create doctor') do
-        tags 'Create Doctor'
+      tags 'Create Doctor'
       response(201, 'Doctor created successfully!') do
         consumes 'application/json'
         parameter name: :user, in: :body, schema: {
@@ -47,7 +47,7 @@ RSpec.describe 'api/v1/doctors', type: :request do
     parameter name: 'id', in: :path, type: :string, description: 'id'
 
     get('show doctor') do
-        tags 'Show Doctor'
+      tags 'Show Doctor'
       response(200, 'Doctor loaded successfully!') do
         let(:id) { '123' }
 
@@ -63,7 +63,7 @@ RSpec.describe 'api/v1/doctors', type: :request do
     end
 
     delete('delete doctor') do
-        tags 'Delete Doctor'
+      tags 'Delete Doctor'
       response(200, 'Doctor deleted successfully') do
         let(:id) { '123' }
 

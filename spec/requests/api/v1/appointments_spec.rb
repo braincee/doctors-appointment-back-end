@@ -3,7 +3,7 @@ require 'swagger_helper'
 RSpec.describe 'api/v1/appointments', type: :request do
   path '/api/v1/appointments' do
     get('list appointments') do
-        tags 'All Appointments'
+      tags 'All Appointments'
       response(200, 'successful') do
         after do |example|
           example.metadata[:response][:content] = {
@@ -17,7 +17,7 @@ RSpec.describe 'api/v1/appointments', type: :request do
     end
 
     post('create appointment') do
-        tags 'Create Appointment'
+      tags 'Create Appointment'
       response(200, 'successful') do
         consumes 'application/json'
         parameter name: :user, in: :body, schema: {
@@ -47,7 +47,7 @@ RSpec.describe 'api/v1/appointments', type: :request do
     parameter name: 'id', in: :path, type: :string, description: 'id'
 
     delete('delete appointment') do
-        tags 'Delete Appointment'
+      tags 'Delete Appointment'
       response(200, 'Appointment created successfully!') do
         let(:id) { '123' }
 
