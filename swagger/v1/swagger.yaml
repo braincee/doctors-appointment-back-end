@@ -1,0 +1,160 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/appointments":
+    get:
+      summary: list appointments
+      tags:
+      - All Appointments
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create appointment
+      tags:
+      - Create Appointment
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                city:
+                  type: string
+                appointment_time:
+                  type: string
+                  format: date-time
+                user_id:
+                  type: integer
+                doctor_id:
+                  type: integer
+              required:
+              - city
+              - apppointment_time
+              - user_id
+              - doctor_id
+  "/api/v1/appointments/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: delete appointment
+      tags:
+      - Delete Appointment
+      responses:
+        '200':
+          description: Appointment created successfully!
+  "/api/v1/doctors":
+    get:
+      summary: list doctors
+      tags:
+      - All Doctors
+      responses:
+        '200':
+          description: All doctors loaded successfully!
+    post:
+      summary: create doctor
+      tags:
+      - Create Doctor
+      parameters: []
+      responses:
+        '201':
+          description: Doctor created successfully!
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                fee:
+                  type: integer
+                image:
+                  type: string
+                speciality:
+                  type: string
+              required:
+              - name
+              - fee
+              - image
+              - speciality
+  "/api/v1/doctors/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show doctor
+      tags:
+      - Show Doctor
+      responses:
+        '200':
+          description: Doctor loaded successfully!
+    delete:
+      summary: delete doctor
+      tags:
+      - Delete Doctor
+      responses:
+        '200':
+          description: Doctor deleted successfully
+  "/api/login":
+    post:
+      summary: login user
+      tags:
+      - User Login
+      parameters: []
+      responses:
+        '200':
+          description: Logged in successfully!!
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+              required:
+              - name
+  "/api/register":
+    post:
+      summary: signup user
+      tags:
+      - User SignUp
+      parameters: []
+      responses:
+        '201':
+          description: Successfully signed up!!
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+              required:
+              - name
+              - email
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: 127.0.0.1:3001/
