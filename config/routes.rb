@@ -21,7 +21,7 @@ Rails.application.routes.draw do
      delete '/doctors/:id', to: 'doctors#destroy'
      patch '/doctors/update/:id', to: 'doctors#update'
 
-    # appointment route
+    # appointment routes
     
      get '/appointments', to: 'appointments#index'
      post '/appointments/:id', to: 'appointments#show'

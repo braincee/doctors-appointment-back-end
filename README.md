@@ -4,8 +4,6 @@
 
 Project requirements can be found [here](https://github.com/microverseinc/curriculum-final-capstone/blob/main/projects/business_requirements.md)
 
-
-
 ## Kanban Board
 We are two members in team 
  - [@braincee](https://github.com/braincee)
