@@ -5,4 +5,3 @@ class AppointmentTest < ActiveSupport::TestCase
   #   assert true
   # end
 end
-

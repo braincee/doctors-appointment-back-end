@@ -26,4 +26,3 @@ class DoctorsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 end
-

@@ -3,4 +3,3 @@ class AppointmentSerializer < ActiveModel::Serializer
   belongs_to :user
   belongs_to :doctor
 end
-
