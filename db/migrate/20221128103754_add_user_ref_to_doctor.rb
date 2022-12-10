@@ -3,3 +3,4 @@ class AddUserRefToDoctor < ActiveRecord::Migration[7.0]
     add_reference :doctors, :user, null: false, foreign_key: true
   end
 end
+
