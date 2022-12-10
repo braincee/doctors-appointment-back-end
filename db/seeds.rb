@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 first_user = User.create!(name:'amos', email:'amos@gmail.com', password:'amos123')
-second_user = User.create!(name:'stephen', email:'stephen@gmail.com', password:'stephen123')
+second_user = User.create!(name:'steve', email:'stephen@gmail.com', password:'stephen123')
 third_user = User.create!(name:'brenda', email:'brenda@gmail.com', password:'brenda123')
 fourth_user = User.create!(name:'brian', email:'brian@gmail.com', password:'brian123')
 fifth_user = User.create!(name:'antoney', email:'antoney@gmail.com', password:'antoney123')
