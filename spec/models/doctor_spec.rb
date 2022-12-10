@@ -38,3 +38,4 @@ RSpec.describe Doctor, type: :model do
     end
   end
 end
+

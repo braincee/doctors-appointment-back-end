@@ -53,3 +53,4 @@ RSpec.describe 'users', type: :request do
     end
   end
 end
+

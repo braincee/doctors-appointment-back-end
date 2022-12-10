@@ -50,3 +50,4 @@ class Api::V1::UsersController < ApplicationController
     params.require(:user).permit(:id, :name, :email)
   end
 end
+

@@ -7,3 +7,4 @@ class Doctor < ApplicationRecord
                          length: { in: 3..100, message: 'Speciality\'s length should be in range of 3 to 100' }
   validates :fee, presence: true
 end
+

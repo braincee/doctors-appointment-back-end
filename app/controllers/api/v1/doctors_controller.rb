@@ -48,3 +48,4 @@ class Api::V1::DoctorsController < ApplicationController
     params.require(:doctor).permit(:id, :user_id, :name, :fee, :image, :speciality)
   end
 end
+
