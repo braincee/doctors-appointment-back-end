@@ -3,4 +3,3 @@ class AddUserRefToAppointment < ActiveRecord::Migration[7.0]
     add_reference :appointments, :user, null: false, foreign_key: true
   end
 end
-
